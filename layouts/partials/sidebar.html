@@ -1,16 +1,6 @@
 <aside class="l-sidebar">
 
   <div class="sections sidebar">
-    <section class="sidebar">
-      <header>LATESTS</header>
-      <div>
-        <div class="articles sm">
-          {{ range $i, $p := (first 10 .Site.Pages) }}
-          {{ .Render "li_sm" }}
-          {{ end }}
-        </div>
-      </div>
-    </section>
 
     {{ range $key, $value := .Site.Taxonomies }}
     <section class="sidebar">
@@ -22,6 +12,25 @@
       </div>
     </section>
     {{ end }}
+
+    <section class="sidebar">
+      <header>LATEST</header>
+      <div>
+        <div class="articles sm">
+          {{ range $i, $p := (first 10 .Site.Pages) }}
+          {{ .Render "li_sm" }}
+          {{ end }}
+        </div>
+      </div>
+    </section>
+
+    <section class="sidebar">
+      <div>
+      {{ partial "searchbar.html" . }}
+      </div>
+    </section>
+
+
   </div>
 
 </aside>

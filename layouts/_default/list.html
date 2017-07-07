@@ -11,9 +11,9 @@
     {{ end }}
 
     <div class="articles">
-      <div class="mrow">
+      <div class="mrow infinite-container">
         {{ range (.Paginate .Data.Pages).Pages }}
-        <div class="mcol c6">{{ .Render "li" }}</div>
+        <div class="mcol c6 infinite-item">{{ .Render "li" }}</div>
         {{ end }}
       </div>
     </div>
